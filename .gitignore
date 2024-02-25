@@ -1,0 +1,20 @@
+*.json
+*.exe
+/repas_fi/Ex14/*.sln
+*.suo
+*.db
+*.vsidx
+*.lock
+*.db-shm
+*.db-wal
+*.opendb
+*.ipch
+*.recipe
+*.ilk
+*.log
+*.pdb
+*.tlog
+*.obj
+*.idb
+/repas_fi/Ex9/x64/Debug/Ex9 - Sessio1.vcxproj.FileListAbsolute.txt
+/repas_fi/Ex8/x64/Debug/Exercici1.vcxproj.FileListAbsolute.txt
