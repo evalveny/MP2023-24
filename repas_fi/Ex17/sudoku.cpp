@@ -11,13 +11,13 @@ using namespace std;
 */
 int llegeixNumero()
 {
-	int numero;
-	do
-	{
-		cout << "Introdueix n�mero (entre 1 i 9): ";
-		cin >> numero;
-	} while ((numero < 0) || (numero > 9));
-	return numero;
+    int numero;
+    do
+    {
+        cout << "Introdueix n�mero (entre 1 i 9): ";
+        cin >> numero;
+    } while ((numero < 0) || (numero > 9));
+    return numero;
 }
 
 
@@ -28,19 +28,19 @@ int llegeixNumero()
 */
 void llegeixPosicio(int& fila, int& columna)
 {
-	do
-	{
-		cout << "Introdueix fila i columna (entre 1 i 9): ";
-		cin >> fila;
-		cin >> columna;
-	} while ((fila < 0) || (fila > 9) || (columna < 0) || (columna > 9));
+    do
+    {
+        cout << "Introdueix fila i columna (entre 1 i 9): ";
+        cin >> fila;
+        cin >> columna;
+    } while ((fila < 0) || (fila > 9) || (columna < 0) || (columna > 9));
 }
 
 void llegeixNumeroPosicio(int& numero, int& fila, int& columna)
 {
-	numero = llegeixNumero();
-	if (numero != 0)
-		llegeixPosicio(fila, columna);
+    numero = llegeixNumero();
+    if (numero != 0)
+        llegeixPosicio(fila, columna);
 }
 
 /**
@@ -52,16 +52,16 @@ void llegeixNumeroPosicio(int& numero, int& fila, int& columna)
 */
 bool esValidFila(int tauler[N_FILES][N_COLUMNES], int fila, int numero)
 {
-	int i = 0;
-	bool valid = true;
-	while ((i<N_COLUMNES) && (valid))
-	{
-		if (tauler[fila][i] == numero)
-			valid = false;
-		else
-			i++;
-	}
-	return (valid);
+    int i = 0;
+    bool valid = true;
+    while ((i<N_COLUMNES) && (valid))
+    {
+        if (tauler[fila][i] == numero)
+            valid = false;
+        else
+            i++;
+    }
+    return (valid);
 }
 
 /**
@@ -73,16 +73,16 @@ bool esValidFila(int tauler[N_FILES][N_COLUMNES], int fila, int numero)
 */
 bool esValidColumna(int tauler[N_FILES][N_COLUMNES], int columna, int numero)
 {
-	int i = 0;
-	bool valid = true;
-	while ((i<N_FILES) && (valid))
-	{
-		if (tauler[i][columna] == numero)
-			valid = false;
-		else
-			i++;
-	}
-	return valid;
+    int i = 0;
+    bool valid = true;
+    while ((i<N_FILES) && (valid))
+    {
+        if (tauler[i][columna] == numero)
+            valid = false;
+        else
+            i++;
+    }
+    return valid;
 }
 
 /**
@@ -95,23 +95,23 @@ bool esValidColumna(int tauler[N_FILES][N_COLUMNES], int columna, int numero)
 */
 bool esValidQuadrat(int tauler[N_FILES][N_COLUMNES], int fila, int columna, int numero)
 {
-	int filaInicial = (fila / TAMANY_QUADRAT) * TAMANY_QUADRAT;
-	int columnaInicial = (columna / TAMANY_QUADRAT) * TAMANY_QUADRAT;
-	bool valid = true;
-	int i = filaInicial;
-	while ((i < (filaInicial + TAMANY_QUADRAT)) && (valid))
-	{
-		int j = columnaInicial;
-		while ((j < (columnaInicial + TAMANY_QUADRAT)) && (valid))
-		{
-			if (tauler[i][j] == numero)
-				valid = false;
-			else
-				j++;
-		}
-		i++;
-	}
-	return valid;
+    int filaInicial = (fila / TAMANY_QUADRAT) * TAMANY_QUADRAT;
+    int columnaInicial = (columna / TAMANY_QUADRAT) * TAMANY_QUADRAT;
+    bool valid = true;
+    int i = filaInicial;
+    while ((i < (filaInicial + TAMANY_QUADRAT)) && (valid))
+    {
+        int j = columnaInicial;
+        while ((j < (columnaInicial + TAMANY_QUADRAT)) && (valid))
+        {
+            if (tauler[i][j] == numero)
+                valid = false;
+            else
+                j++;
+        }
+        i++;
+    }
+    return valid;
 }
 
 /**
@@ -124,28 +124,28 @@ bool esValidQuadrat(int tauler[N_FILES][N_COLUMNES], int fila, int columna, int 
 */
 bool esValid(int tauler[N_FILES][N_COLUMNES], int fila, int columna, int numero)
 {
-	bool valid;
+    bool valid;
 
-	valid = esValidFila(tauler, fila - 1, numero);
-	if (valid)
-	{
-		valid = esValidColumna(tauler, columna - 1, numero);
-		if (valid)
-			valid = esValidQuadrat(tauler, fila - 1, columna - 1, numero);
-	}
-	return valid;
+    valid = esValidFila(tauler, fila - 1, numero);
+    if (valid)
+    {
+        valid = esValidColumna(tauler, columna - 1, numero);
+        if (valid)
+            valid = esValidQuadrat(tauler, fila - 1, columna - 1, numero);
+    }
+    return valid;
 }
 
 
 bool posaNumero(int tauler[N_FILES][N_COLUMNES], int fila, int columna, int numero)
 {
-	bool valid = true;
-	if (tauler[fila - 1][columna - 1] != 0)
-		valid = false;
-	else
-		if (valid = esValid(tauler, fila, columna, numero))
-			tauler[fila - 1][columna - 1] = numero;
-	return valid;
+    bool valid = true;
+    if (tauler[fila - 1][columna - 1] != 0)
+        valid = false;
+    else
+        if (valid = esValid(tauler, fila, columna, numero))
+            tauler[fila - 1][columna - 1] = numero;
+    return valid;
 }
 
 
@@ -155,32 +155,32 @@ bool posaNumero(int tauler[N_FILES][N_COLUMNES], int fila, int columna, int nume
 */
 void mostraSudoku(int tauler[N_FILES][N_COLUMNES])
 {
-	int i, j, k;
+    int i, j, k;
 
-	for (i = 0; i<N_FILES; i++)
-	{
-		if (i % 3 == 0)
-		{
-			for (k = 0; k<(N_COLUMNES * 2) + 1; k++)
-				cout << "=";
-			cout << "\n";
-		}
-		for (j = 0; j<N_COLUMNES; j++)
-		{
-			if (j % 3 == 0)
-				cout << "|";
-			else
-				cout << " ";
-			if (tauler[i][j] != 0)
-				cout << tauler[i][j];
-			else
-				cout << " ";
-		}
-		cout << "|\n";
-	}
-	for (k = 0; k<(N_COLUMNES * 2) + 1; k++)
-		cout << "=";
-	cout << "\n";
+    for (i = 0; i<N_FILES; i++)
+    {
+        if (i % 3 == 0)
+        {
+            for (k = 0; k<(N_COLUMNES * 2) + 1; k++)
+                cout << "=";
+            cout << "\n";
+        }
+        for (j = 0; j<N_COLUMNES; j++)
+        {
+            if (j % 3 == 0)
+                cout << "|";
+            else
+                cout << " ";
+            if (tauler[i][j] != 0)
+                cout << tauler[i][j];
+            else
+                cout << " ";
+        }
+        cout << "|\n";
+    }
+    for (k = 0; k<(N_COLUMNES * 2) + 1; k++)
+        cout << "=";
+    cout << "\n";
 }
 
 /**
