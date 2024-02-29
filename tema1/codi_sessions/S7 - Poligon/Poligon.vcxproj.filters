@@ -18,15 +18,24 @@
     <ClCompile Include="main.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\sessions_classe\sessio5\S5 - Exemple Punt\punt_classe - completat\Punt.cpp">
+    <ClCompile Include="Poligon.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Punt.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="funcions_poligons.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Poligon.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
     <ClInclude Include="Punt.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Poligon.h">
+    <ClInclude Include="funcions_poligons.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

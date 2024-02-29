@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{43E668B9-CA8B-4AF7-9426-B21CC500E8F7}</ProjectGuid>
-    <RootNamespace>Punt</RootNamespace>
+    <ProjectGuid>{C305D3B7-AF06-471E-B9F2-4F0BBB09C353}</ProjectGuid>
+    <RootNamespace>Poligon</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,10 +123,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\..\sessions_classe\sessio5\S5 - Exemple Punt\punt_classe - completat\Punt.cpp" />
+    <ClCompile Include="funcions_poligons.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Poligon.cpp" />
+    <ClCompile Include="Punt.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="funcions_poligons.h" />
     <ClInclude Include="Poligon.h" />
     <ClInclude Include="Punt.h" />
   </ItemGroup>
