@@ -1,0 +1,7 @@
+(P,N)(I,C)(L,N)(O,N)(T,N)
+(C,N)(O,N)(T,N)(X,N)(E,N)
+(C,N)(A,I)(L,N)(M,N)(A,C)
+(T,N)(E,N)(R,N)(R,N)(A,C)
+(L,N)(L,N)(U,I)(N,N)(A,C)
+(G,I)(E,N)(S,N)(P,N)(A,C)
+(A,C)(B,_)(C,N)(D,_)(E,N)(F,_)(G,I)(H,_)(I,C)(J,_)(K,_)(L,N)(M,N)(N,N)(O,N)(P,N)(Q,_)(R,N)(S,N)(T,N)(U,I)(V,_)(W,_)(X,N)(Y,_)(Z,_)
