@@ -22,22 +22,22 @@ typedef enum
 class Aula
 {
 public:
-	Aula() : m_codi(""), m_capacitat(0) { inicialitzaOcupacio(); }
-	Aula(const string& codi, int capacitat): m_codi(codi), m_capacitat(capacitat) { inicialitzaOcupacio(); }
-	void setCodi(const string& codi) { m_codi = codi; }
-	void setCapacitat(int capacitat) { m_capacitat = capacitat; }
-	string getCodi() const { return m_codi; } 
-	int getCapacitat() const { return m_capacitat; }
+    Aula() : m_codi(""), m_capacitat(0) { inicialitzaOcupacio(); }
+    Aula(const string& codi, int capacitat): m_codi(codi), m_capacitat(capacitat) { inicialitzaOcupacio(); }
+    void setCodi(const string& codi) { m_codi = codi; }
+    void setCapacitat(int capacitat) { m_capacitat = capacitat; }
+    string getCodi() const { return m_codi; } 
+    int getCapacitat() const { return m_capacitat; }
 
-	bool estaDisponible(DiaSetmana dia, int hora, int durada) const;
-	bool reserva(DiaSetmana dia, int hora, int durada);
-	bool anulaReserva(DiaSetmana dia, int hora, int durada);
+    bool estaDisponible(DiaSetmana dia, int hora, int durada) const;
+    bool reserva(DiaSetmana dia, int hora, int durada);
+    bool anulaReserva(DiaSetmana dia, int hora, int durada);
 private:
-	string m_codi;
-	int m_capacitat;
-	bool m_ocupacio[MAX_DIES][MAX_HORES];
+    string m_codi;
+    int m_capacitat;
+    bool m_ocupacio[MAX_DIES][MAX_HORES];
 
-	void inicialitzaOcupacio();
+    void inicialitzaOcupacio();
 };
 
 #endif
