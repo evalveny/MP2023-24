@@ -10,6 +10,22 @@ Reserves::Reserves(int nAules, string codis[MAX_AULES], int capacitat[MAX_AULES]
 	}
 }
 
+bool Reserves::comprovaAulaDisponible(const string& codiAula, DiaSetmana dia, int hora)
+{
+	bool trobat = false;
+	int i = 0;
+	while (!trobat && (i < m_nAules))
+	{
+		if (m_aules[i].getCodi() == codiAula)
+			trobat = true;
+		else
+			i++;
+	}
+	if (trobat)
+		trobat = m_aules[i].estaDisponible(dia, hora, 1);
+	return trobat;
+}
+
 string Reserves::reservaActivitat(int nAssistents, DiaActivitat dies[MAX_DIES_ACTIVITAT], int nDies)
 {
 	string codiAula = "";
@@ -64,12 +80,12 @@ bool Reserves::comprovaDisponibilitat(const Aula& aula, DiaActivitat dies[MAX_DI
 
 void Reserves::reservaAula(int nAula, DiaActivitat dies[MAX_DIES_ACTIVITAT], int nDies)
 {
-	for (int i = 0; i < nDies; i++)
-		m_aules[i].reserva(dies[i].dia, dies[i].hora, dies[i].durada);
+	for (int i = 0; i < nDies ; i++)
+		m_aules[nAula].reserva(dies[i].dia, dies[i].hora, dies[i].durada);
 }
 
 void Reserves::anulaReservaAula(int nAula, DiaActivitat dies[MAX_DIES_ACTIVITAT], int nDies)
 {
 	for (int i = 0; i < nDies; i++)
-		m_aules[i].anulaReserva(dies[i].dia, dies[i].hora, dies[i].durada);
+		m_aules[nAula].anulaReserva(dies[i].dia, dies[i].hora, dies[i].durada);
 }

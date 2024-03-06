@@ -16,7 +16,7 @@ bool Aula::estaDisponible(DiaSetmana dia, int hora, int durada) const
 		int i = 0;
 		while (disponible && (i < durada))
 		{
-			if (!m_ocupacio[dia][hora + i - HORA_INICIAL])
+			if (m_ocupacio[dia][hora + i - HORA_INICIAL])
 				disponible = false;
 			else
 				i++;
