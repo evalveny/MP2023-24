@@ -1,21 +1,21 @@
 #ifndef TAULER_H
 #define TAULER_H
-#include "FormaFigura.h"
+#include "Figura.h"
 
-const int MAX_FILA = 24;
-const int MAX_COL = 17;
+const int MAX_FILA = 8;
+const int MAX_COL = 8;
 
 class Tauler
 {
 public:
     Tauler();
-
+    void inicialitza(ColorFigura taulerInicial[MAX_FILA][MAX_COL]);
     bool colisionaFigura(int fila, int col, int mascara[MAX_ALCADA][MAX_AMPLADA], int midaMascara);
-    int colocaFigura(int fila, int col, int mascara[MAX_ALCADA][MAX_AMPLADA], int midaMascara, int color);
-    void mostra();
+    int colocaFigura(const Figura& figura);
+    void getValorsTauler(ColorFigura tauler[MAX_FILA][MAX_COL]);
 
 private:
-    int m_tauler[MAX_FILA][MAX_COL];
+    ColorFigura m_tauler[MAX_FILA + 2][MAX_COL + 4];
     int m_lliures[MAX_FILA];
 
     void baixaFila(int fila);

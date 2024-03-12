@@ -128,13 +128,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Figura.h" />
-    <ClInclude Include="FormaFigura.h" />
     <ClInclude Include="Joc.h" />
     <ClInclude Include="Tauler.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Figura.cpp" />
-    <ClCompile Include="FormaFigura.cpp" />
+    <ClCompile Include="Joc.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Tauler.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
