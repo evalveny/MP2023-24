@@ -26,7 +26,7 @@ typedef enum
     FIGURA_L,
     FIGURA_J,
     FIGURA_Z,
-    FIGURA_S,
+    FIGURA_S
 } TipusFigura;
 
 const int MAX_ALCADA = 4;
