@@ -46,12 +46,14 @@ float testAfegeixNota(Estudiant estudiants[], int& nEstudiants)
 		cout << "Comment :=>> Resultat esperat: ";
 		mostraBool(resultatEsperat[i]);
 		cout << endl;
-		cout << "Comment :=>> Nota mitjana esperada: " << notaMitjanaEsperada[i];
+		if (resultatEsperat[i])
+			cout << "Comment :=>> Nota mitjana esperada: " << notaMitjanaEsperada[i] << endl;
 		cout << "Comment :=>> ----------" << endl;
 		cout << "Comment :=>> Resultat obtingut: ";
 		mostraBool(resultat);
 		cout << endl;
-		cout << "Comment :=>> Nota mitjana obtinguda: " << notaMitjana;
+		if (resultat)
+			cout << "Comment :=>> Nota mitjana obtinguda: " << notaMitjana << endl;;
 		cout << "Comment :=>> ----------" << endl;
 		if (resultatEsperat[i] == resultat)
 			if (resultat)
@@ -64,6 +66,46 @@ float testAfegeixNota(Estudiant estudiants[], int& nEstudiants)
 				}
 			else
 				cout << "Comment :=>> CORRECTE" << endl;
+		else
+		{
+			cout << "Comment :=>> ERROR" << endl;
+			reduccio += 2;
+		}
+		cout << "Comment :=>> -----------------------------------------------" << endl;
+	}
+	return reduccio;
+}
+
+float testAfegeixNotaEstudiant()
+{
+	float reduccio = 0.0;
+	const int N_PROVES = 2;
+	float nota[N_PROVES] = { 4.0, 8.0 };
+	float notaEsperada[N_PROVES] = { 4.0, 6.0 };
+
+	cout << "Comment :=>>" << endl;
+	cout << "Comment :=>> -----------------------------------------------" << endl;
+	cout << "Comment :=>> Test de la funcio afegeixNotaEstudiant " << endl;
+	cout << "Comment :=>> -----------------------------------------------" << endl;
+	cout << "Comment :=>> Inicialitzem un estudiant amb NIU_1 i NOM_1 ..." << endl;
+	Estudiant e("NOM_1", "NIU_1");
+
+	for (int i = 0; i < N_PROVES; i++)
+	{
+		bool resultat;
+		float notaMitjana;
+
+		cout << "Comment :=>>" << endl;
+		cout << "Comment :=>> TEST " << i + 1 << endl;
+		cout << "Comment :=>> -----------------------------------------------" << endl;
+		cout << "Comment :=>> Nota afegida: " << nota[i] << endl;
+		cout << "Comment :=>> ----------" << endl;
+		resultat = afegeixNotaEstudiant(&e, nota[i], &notaMitjana);
+		cout << "Comment :=>> Nota mitjana esperada: " << notaEsperada[i] << endl;
+		cout << "Comment :=>> ----------" << endl;
+		cout << "Comment :=>> Nota mitjana obtinguda: " << notaMitjana << endl;
+		if (notaEsperada[i] == notaMitjana)
+			cout << "Comment :=>> CORRECTE" << endl;
 		else
 		{
 			cout << "Comment :=>> ERROR" << endl;
@@ -175,12 +217,11 @@ int main()
 	float reduccio = testCercaEstudiant(estudiants, nEstudiants);
 	grade = grade + (4 - reduccio);
 	cout << "Grade :=>> " << grade << endl;
-	reduccio = testAfegeixNotaEstudiant(estudiants, nEstudiants);
+	reduccio = testAfegeixNotaEstudiant();
 	grade = grade + (2 - reduccio);
 	cout << "Grade :=>> " << grade << endl;
 	reduccio = testAfegeixNota(estudiants, nEstudiants);
 	grade = grade + (4 - reduccio);
-	cout << "Grade :=>> " << grade << endl;
 	if (grade < 0)
 		grade = 0.0;
 	if (grade == 10.0)
