@@ -80,7 +80,7 @@ void SnakeGame::printBoard()
     }
 
     if (m_modeTest)
-        cout << "Comment:=>> ";
+        cout << "Comment :=>> ";
     cout << " ";
     for (int j = 0; j < MAX_COL; ++j)
         cout << "_";
@@ -88,7 +88,7 @@ void SnakeGame::printBoard()
     for (int i = 0; i < MAX_ROW; ++i) 
     {
         if (m_modeTest)
-            cout << "Comment:=>> ";
+            cout << "Comment :=>> ";
         cout << "|";
         for (int j = 0; j < MAX_COL; ++j) 
         {
@@ -97,7 +97,7 @@ void SnakeGame::printBoard()
         cout << "|" << endl;
     }
     if (m_modeTest)
-        cout << "Comment:=>> ";
+        cout << "Comment :=>> ";
     cout << " ";
     for (int j = 0; j < MAX_COL; ++j)
         cout << "_";
