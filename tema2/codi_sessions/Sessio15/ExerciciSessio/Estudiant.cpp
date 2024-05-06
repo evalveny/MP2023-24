@@ -69,8 +69,9 @@ void Estudiant::mostraAssignatures()
 
 string Estudiant::getAssignatura(int posicio) const
 {
-	if ((posicio >= 0) && (posicio < m_assignatures.size()))
-		return m_assignatures[posicio];
-	else return "";
+    string assignatura = "";
+    if ((posicio >= 0) && (posicio < m_assignatures.size()))
+        assignatura = m_assignatures[posicio];
+    return assignatura;
 }
 
