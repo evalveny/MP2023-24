@@ -67,6 +67,9 @@ NFont::Rectf GraphicManager::drawFont (FONT_NAME name,
 string GraphicManager::getImagePath(IMAGE_NAME name){
     string path;
     switch (name) {
+        case GRAFIC_FONS:
+            path = "data/Graphics/fons.png";
+            break;
         case GRAFIC_TAULER:
             path = "data/Graphics/tauler.png";
             break;
@@ -93,12 +96,8 @@ string GraphicManager::getImagePath(IMAGE_NAME name){
             break;
         default:
             path = "";
-            break;
-        
+            break;       
     }
-    
-    
-    
     return path;
 }
 string GraphicManager::getFontPath(FONT_NAME name){

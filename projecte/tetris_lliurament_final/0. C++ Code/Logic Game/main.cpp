@@ -26,7 +26,7 @@
 
 #endif
 
-#include "./JocGrafic.h"
+#include "./Partida.h"
 #include "./InfoJoc.h"
 
 TipusTecla getTeclaPressionada()
@@ -62,7 +62,7 @@ int main(int argc, const char* argv[])
     //Mostrem la finestra grafica
     pantalla.show();
 
-    JocGrafic game;
+    Partida game;
     game.inicialitza("data/Games/partida.txt");	
         
     Uint64 NOW = SDL_GetPerformanceCounter();
@@ -80,7 +80,6 @@ int main(int argc, const char* argv[])
         pantalla.processEvents();
 
         tecla = getTeclaPressionada();
-
         game.actualitza(tecla, deltaTime);
 
         // Actualitza la pantalla

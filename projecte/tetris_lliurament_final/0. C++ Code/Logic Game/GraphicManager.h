@@ -17,8 +17,8 @@
 using namespace std;
 
 typedef enum {
+    GRAFIC_FONS =  0,
     GRAFIC_TAULER,
-    GRAFIC_QUADRAT_NEGRE = 0,
     GRAFIC_QUADRAT_GROC,
     GRAFIC_QUADRAT_BLAUCEL,
     GRAFIC_QUADRAT_MAGENTA,
