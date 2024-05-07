@@ -52,6 +52,9 @@
     <ClCompile Include="..\..\0. C++ Code\Logic Game\InfoJoc.cpp">
       <Filter>Logic Game\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\0. C++ Code\Logic Game\LlistaFigura.cpp">
+      <Filter>Logic Game\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\0. C++ Code\Graphic Lib\debug.h">
@@ -112,6 +115,12 @@
       <Filter>Logic Game\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\0. C++ Code\Logic Game\InfoJoc.h">
+      <Filter>Logic Game\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\0. C++ Code\Logic Game\LlistaFigura.h">
+      <Filter>Logic Game\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\0. C++ Code\Logic Game\NodeFigura.h">
       <Filter>Logic Game\Header Files</Filter>
     </ClInclude>
   </ItemGroup>

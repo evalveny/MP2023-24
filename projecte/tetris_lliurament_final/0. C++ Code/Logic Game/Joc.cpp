@@ -2,6 +2,22 @@
 #include <fstream>
 using namespace std;
 
+void Joc::novaFigura()
+{
+	TipusFigura tipus = TipusFigura((rand() % N_TIPUS_FIGURES) + 1);
+	int colMaxima = N_COL_TAULER - 2;
+	if (tipus == FIGURA_O)
+		colMaxima = N_COL_TAULER - 1;
+	else
+		if (tipus == FIGURA_I)
+			colMaxima = N_COL_TAULER - 3;
+	int columna = (rand() % colMaxima) + 1;
+	int nGir = (rand() % 4);
+	m_figuraActual.inicialitza(tipus, 1, columna);
+	for (int i = 0; i < nGir; i++)
+		m_figuraActual.gira(GIR_HORARI);
+}
+
 void Joc::inicialitza(const string& nomFitxer)
 {
 	ifstream fitxer;
@@ -53,14 +69,24 @@ bool Joc::mouFigura(int dirX)
 
 int Joc::baixaFigura()
 {
-	int nFiles = 0;
+	int nFiles = -1;
 	m_figuraActual.baixa();
 	if (m_tauler.colisionaFigura(m_figuraActual))
 	{
+		nFiles = 0;
 		m_figuraActual.puja();
 		nFiles = m_tauler.colocaFigura(m_figuraActual);
-		m_figuraActual.inicialitza(NO_FIGURA, -1, -1);
 	}
+	return nFiles;
+}
+
+int Joc::colocaFigura()
+{
+	int nFiles;
+	do 
+	{
+		nFiles = baixaFigura();
+	} while (nFiles == -1);
 	return nFiles;
 }
 

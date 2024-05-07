@@ -200,8 +200,8 @@ void Figura::dibuixa()
 		for (int j = 0; j < m_amplada; j++)
 		{
 			if (m_mascara[i][j] != 0)
-				dibuixaQuadrat(m_color, POS_X_TAULER + m_columna + ((j + 1) * MIDA_QUADRAT),
-					POS_Y_TAULER + m_fila + (i * MIDA_QUADRAT));
+				dibuixaQuadrat(m_color, POS_X_TAULER + ((m_columna + j) * MIDA_QUADRAT),
+					POS_Y_TAULER + ((m_fila - 1 + i) * MIDA_QUADRAT));
 		}
 
 }

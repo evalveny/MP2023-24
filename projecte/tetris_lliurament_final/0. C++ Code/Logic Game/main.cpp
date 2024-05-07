@@ -29,27 +29,6 @@
 #include "./Partida.h"
 #include "./InfoJoc.h"
 
-TipusTecla getTeclaPressionada()
-{
-    TipusTecla tecla = NO_TECLA;
-
-    if (Keyboard_GetKeyTrg(KEYBOARD_LEFT))
-        tecla = TECLA_ESQUERRA;
-    else
-        if (Keyboard_GetKeyTrg(KEYBOARD_RIGHT))
-            tecla = TECLA_DRETA;
-        else
-            if (Keyboard_GetKeyTrg(KEYBOARD_DOWN))
-                tecla = TECLA_ABAIX;
-            else
-                if (Keyboard_GetKeyTrg(KEYBOARD_ESCAPE))
-                    tecla = TECLA_ESCAPE;
-                else
-                    if (Keyboard_GetKeyTrg(KEYBOARD_UP))
-                        tecla = TECLA_AMUNT;
-    return tecla;
-}
-
 
 int main(int argc, const char* argv[])
 {
@@ -63,13 +42,12 @@ int main(int argc, const char* argv[])
     pantalla.show();
 
     Partida game;
-    game.inicialitza("data/Games/partida.txt");	
+    game.inicialitza("data/Games/partida.txt", "", "");
         
     Uint64 NOW = SDL_GetPerformanceCounter();
     Uint64 LAST = 0;
     double deltaTime = 0;
 
-    TipusTecla tecla;
     do
     {
         LAST = NOW;
@@ -79,13 +57,12 @@ int main(int argc, const char* argv[])
         // Captura tots els events de ratolí i teclat de l'ultim cicle
         pantalla.processEvents();
 
-        tecla = getTeclaPressionada();
-        game.actualitza(tecla, deltaTime);
+        game.actualitza(deltaTime);
 
         // Actualitza la pantalla
         pantalla.update();
 
-    } while (tecla != TECLA_ESCAPE);
+    } while (!Keyboard_GetKeyTrg(KEYBOARD_ESCAPE));
     // Sortim del bucle si pressionem ESC
 
     //Instruccio necesaria per alliberar els recursos de la llibreria 

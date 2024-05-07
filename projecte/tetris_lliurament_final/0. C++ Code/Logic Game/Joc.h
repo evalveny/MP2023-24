@@ -10,9 +10,11 @@ class Joc
 public:
 	Joc() {}
 	void inicialitza(const string& nomFitxer);
+	void novaFigura();
 	bool giraFigura(DireccioGir direccio);
 	bool mouFigura(int dirX);
 	int baixaFigura();
+	int colocaFigura();
 	void escriuTauler(const string& nomFitxer);
 	void dibuixa();
 
