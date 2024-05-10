@@ -8,9 +8,9 @@ public:
 	LlistaFigura(const LlistaFigura& l);
 	LlistaFigura& operator=(const LlistaFigura& l);
 	NodeFigura* insereix(const InfoFigura& pt);
-	NodeFigura* elimina();
+	void elimina();
 	int getNElements() const;
-	NodeFigura* getInici() { return m_primer; }
+	InfoFigura getPrimer() const { return m_primer->getValor(); }
 	bool esBuida() const { return m_primer == nullptr; }
 		
  private:

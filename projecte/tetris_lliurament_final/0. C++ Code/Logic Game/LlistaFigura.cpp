@@ -45,23 +45,22 @@ NodeFigura *LlistaFigura::insereix(const InfoFigura& valor)
 	if (aux != nullptr)
 	{
 		aux->setValor(valor);
+		aux->setNext(nullptr);
 		if (m_primer == nullptr)
 		{
-			aux->setNext(nullptr);
 			m_primer = aux;
-			m_ultim = aux;
 		}
 		else
 		{
 			m_ultim->setNext(aux);
-			m_ultim = aux; 
 		}
+		m_ultim = aux;
 	}
 
 	return aux;
 }
 
-NodeFigura *LlistaFigura::elimina()
+void LlistaFigura::elimina()
 {
  	NodeFigura* aux;
 	if (m_primer == m_ultim)
@@ -76,7 +75,6 @@ NodeFigura *LlistaFigura::elimina()
 		delete m_primer;
 		m_primer = aux;
 	}
-	return m_primer;
 }
 
 int LlistaFigura::getNElements() const

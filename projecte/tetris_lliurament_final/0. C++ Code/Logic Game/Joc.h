@@ -10,7 +10,8 @@ class Joc
 public:
 	Joc() {}
 	void inicialitza(const string& nomFitxer);
-	void novaFigura();
+	bool novaFigura();
+	void novaFigura(InfoFigura figura);
 	bool giraFigura(DireccioGir direccio);
 	bool mouFigura(int dirX);
 	int baixaFigura();

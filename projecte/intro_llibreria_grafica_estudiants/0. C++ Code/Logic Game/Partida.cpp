@@ -79,7 +79,7 @@ void Partida::actualitza(double deltaTime)
 
 
 
-    //TODO 5: Mostrar l’estat inicial del joc amb tots els caramels col·locats a la seva posició inicial
+    //TODO 5: Mostrar l’estat inicial del joc amb el tauler i la figura inicialitzats del fitxer        
     //-----------------------------------------
  
 

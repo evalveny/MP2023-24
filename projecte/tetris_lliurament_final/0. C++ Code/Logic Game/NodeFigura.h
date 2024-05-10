@@ -1,13 +1,6 @@
 #include <stdlib.h>
 #include "InfoJoc.h"
 
-typedef struct
-{
-    TipusFigura figura;
-    int fila;
-    int columna;
-    int gir;
-} InfoFigura;
 
 class NodeFigura
 {

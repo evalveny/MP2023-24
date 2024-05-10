@@ -34,6 +34,25 @@ typedef enum
     GIR_ANTI_HORARI
 } DireccioGir;
 
+typedef struct
+{
+    TipusFigura tipus;
+    int fila;
+    int columna;
+    int gir;
+} InfoFigura;
+
+typedef enum
+{
+    MOVIMENT_ESQUERRA = 0,
+    MOVIMENT_DRETA = 1,
+    MOVIMENT_GIR_HORARI = 2,
+    MOVIMENT_GIR_ANTI_HORARI = 3,
+    MOVIMENT_BAIXA = 4,
+    MOVIMENT_BAIXA_FINAL = 5,
+} TipusMoviment;
+
+
 const int SCREEN_SIZE_X = 600;
 const int SCREEN_SIZE_Y = 700;
 
@@ -50,6 +69,10 @@ const int POS_Y_PUNTUACIO = 50;
 
 const int POS_X_NIVELL = 300;
 const int POS_Y_NIVELL = 50;
+
+const int POS_X_FINAL_JOC = 120;
+const int POS_Y_FINAL_JOC = 300;
+
 
 void dibuixaQuadrat(ColorFigura color, int posX, int posY);
 

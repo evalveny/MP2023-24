@@ -3,6 +3,8 @@
 
 #include "./Joc.h"
 #include "./InfoJoc.h"
+#include "LlistaFigura.h"
+#include "LlistaMoviment.h"
 #include <ctime>
 
 const int PUNTS_FIGURA = 10;
@@ -24,15 +26,15 @@ typedef enum
 class Partida
 {
 public:
-	Partida() : m_mode(MODE_NORMAL), m_temps(0.0), m_punts(0), m_nivell(1), m_velocitat(VELOCITAT_INICIAL)
+	Partida() : m_mode(MODE_NORMAL), m_temps(0.0), m_punts(0), m_nivell(1), m_velocitat(VELOCITAT_INICIAL), m_finalJoc(false)
 	{
 		srand(time(0));
 	}
-	Partida(ModeJoc mode) : m_mode(mode), m_temps(0.0), m_punts(0), m_nivell(1), m_velocitat(VELOCITAT_INICIAL)
+	Partida(ModeJoc mode) : m_mode(mode), m_temps(0.0), m_punts(0), m_nivell(1), m_velocitat(VELOCITAT_INICIAL), m_finalJoc(false)
 	{
 		srand(time(0));
 	}
-	void inicialitza(const string& nomFitxerInicial, const string& nomFitxerFigures, const string& nomFitxerMoviments);
+	void inicialitza(const string& nomFitxerInicial, const string& nomFitxerFigures, const string& nomFitxerMoviments);		
 	void actualitza(float deltaTime);
 private:
 	Joc m_joc;
@@ -41,7 +43,15 @@ private:
 	int m_punts;
 	int m_nivell;
 	double m_velocitat;
+	bool m_finalJoc;
+	LlistaFigura m_figures;
+	LlistaMoviment m_moviments;
 
 	void actualitzaPunts(int nFilesEliminades);
+	void inicialitzaFigures(const string& nomFitxer);
+	void inicialitzaMoviments(const string& nomFitxer);
+	void actualitzaNormal(float deltaTime);
+	void actualitzaTest(float deltaTime);
+
 };
 #endif

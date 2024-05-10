@@ -163,9 +163,11 @@
     <ClCompile Include="..\..\0. C++ Code\Logic Game\InfoJoc.cpp" />
     <ClCompile Include="..\..\0. C++ Code\Logic Game\Joc.cpp" />
     <ClCompile Include="..\..\0. C++ Code\Logic Game\LlistaFigura.cpp" />
+    <ClCompile Include="..\..\0. C++ Code\Logic Game\LlistaMoviment.cpp" />
     <ClCompile Include="..\..\0. C++ Code\Logic Game\Partida.cpp" />
     <ClCompile Include="..\..\0. C++ Code\Logic Game\main.cpp" />
     <ClCompile Include="..\..\0. C++ Code\Logic Game\Tauler.cpp" />
+    <ClCompile Include="..\..\0. C++ Code\Logic Game\Tetris.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\0. C++ Code\Graphic Lib\debug.h" />
@@ -187,9 +189,12 @@
     <ClInclude Include="..\..\0. C++ Code\Logic Game\InfoJoc.h" />
     <ClInclude Include="..\..\0. C++ Code\Logic Game\Joc.h" />
     <ClInclude Include="..\..\0. C++ Code\Logic Game\LlistaFigura.h" />
+    <ClInclude Include="..\..\0. C++ Code\Logic Game\LlistaMoviment.h" />
     <ClInclude Include="..\..\0. C++ Code\Logic Game\NodeFigura.h" />
+    <ClInclude Include="..\..\0. C++ Code\Logic Game\NodeMoviment.h" />
     <ClInclude Include="..\..\0. C++ Code\Logic Game\Partida.h" />
     <ClInclude Include="..\..\0. C++ Code\Logic Game\Tauler.h" />
+    <ClInclude Include="..\..\0. C++ Code\Logic Game\Tetris.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

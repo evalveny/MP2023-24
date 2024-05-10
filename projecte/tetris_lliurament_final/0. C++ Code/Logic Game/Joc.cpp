@@ -2,7 +2,7 @@
 #include <fstream>
 using namespace std;
 
-void Joc::novaFigura()
+bool Joc::novaFigura()
 {
 	TipusFigura tipus = TipusFigura((rand() % N_TIPUS_FIGURES) + 1);
 	int colMaxima = N_COL_TAULER - 2;
@@ -15,6 +15,15 @@ void Joc::novaFigura()
 	int nGir = (rand() % 4);
 	m_figuraActual.inicialitza(tipus, 1, columna);
 	for (int i = 0; i < nGir; i++)
+		m_figuraActual.gira(GIR_HORARI);
+	bool colisiona = m_tauler.colisionaFigura(m_figuraActual);
+	return colisiona;
+}
+
+void Joc::novaFigura(InfoFigura figura)
+{
+	m_figuraActual.inicialitza(figura.tipus, figura.fila, figura.columna);
+	for (int i = 0; i < figura.gir; i++)
 		m_figuraActual.gira(GIR_HORARI);
 }
 
