@@ -36,6 +36,7 @@ public:
 	}
 	void inicialitza(const string& nomFitxerInicial, const string& nomFitxerFigures, const string& nomFitxerMoviments);		
 	void actualitza(float deltaTime);
+	int getPuntuacio() const { return m_punts; }
 private:
 	Joc m_joc;
 	ModeJoc m_mode;

@@ -53,26 +53,26 @@ bool Titulacio::eliminaEstudiant(const string& niu)
 void Titulacio::insereixEstudiant(const string& niu, const string& nom)
 {
 	bool trobat = false;
-	NodeEstudiant* aux = m_estudiants;
+	NodeEstudiant* seguent = m_estudiants;
 	NodeEstudiant* anterior = nullptr;
-	while ((aux != nullptr) && !trobat)
-	{
-		if (niu < aux->getValor().getNiu())
-			trobat = true;
-		else
-		{
-			anterior = aux;
-			aux = aux->getNext();
-		}
-	}
-	Estudiant estudiantAux(niu, nom);
-	NodeEstudiant* nouEstudiant = new NodeEstudiant;
-	nouEstudiant->setValor(estudiantAux);
-	nouEstudiant->setNext(aux);
-	if (anterior != nullptr)
-		anterior->setNext(nouEstudiant);
-	else
-		m_estudiants = nouEstudiant;
+    while ((seguent != nullptr) && !trobat)
+    {
+        if (niu < seguent->getValor().getNiu())
+            trobat = true;
+        else
+        {
+            anterior = seguent;
+            seguent = seguent->getNext();
+        }
+    }
+    Estudiant estudiantAux(niu, nom);
+    NodeEstudiant* nouEstudiant = new NodeEstudiant;
+    nouEstudiant->setValor(estudiantAux);
+    nouEstudiant->setNext(seguent);
+    if (anterior != nullptr)
+        anterior->setNext(nouEstudiant);
+    else
+        m_estudiants = nouEstudiant;
 }
 
 bool Titulacio::consultaEstudiant(const string& niu, Estudiant& e)

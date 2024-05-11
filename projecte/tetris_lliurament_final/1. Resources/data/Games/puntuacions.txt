@@ -1,0 +1,12 @@
+jugador_6 60
+1afafaadf 150
+dfsd 190
+jugador_1 200
+sfsg 200
+xxxx 210
+jugador_2 400
+adfdafd 450
+jugador_7 480
+jugador_3 600
+jugador_4 800
+jugador_5 1000
