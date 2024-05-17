@@ -76,7 +76,6 @@ void Tetris::actualitzaPuntuacio(const string& nom, int punts)
 
 int Tetris::juga(Screen& pantalla, ModeJoc mode, const string& nomFitxerInicial, const string& nomFitxerFigures, const string& nomFitxerMoviments)
 {
-
     //Mostrem la finestra grafica
     pantalla.show();
 

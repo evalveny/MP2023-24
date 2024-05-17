@@ -43,6 +43,8 @@ Screen::~Screen()
 {
   SDL_DestroyRenderer(g_Video.renderer) ;
   SDL_DestroyWindow(g_Video.window) ;
+  g_Video.renderer = nullptr;
+  g_Video.window = nullptr;
   SDL_Quit();
 }
 
