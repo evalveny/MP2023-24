@@ -71,6 +71,7 @@ int main(int argc, const char* argv[])
                 tetris.actualitzaPuntuacio(nomJugador, punts);
                 break;
             case '2':
+                Sleep(500);
                 llegeixNomFitxers(nomInicial, nomFigures, nomMoviments);
                 punts = tetris.juga(pantalla, MODE_TEST, nomInicial, nomFigures, nomMoviments);
                 break;
