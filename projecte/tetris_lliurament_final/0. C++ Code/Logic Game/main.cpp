@@ -50,7 +50,7 @@ int main(int argc, const char* argv[])
     //Instruccions necesaries per poder incloure la llibreria i que trobi el main
     SDL_SetMainReady();
     SDL_Init(SDL_INIT_VIDEO);
-
+    
     //Inicialitza un objecte de la classe Screen que s'utilitza per gestionar la finestra grafica
     Screen pantalla(SCREEN_SIZE_X, SCREEN_SIZE_Y);
 
